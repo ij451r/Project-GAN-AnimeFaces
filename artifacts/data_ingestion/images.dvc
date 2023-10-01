@@ -1,13 +1,6 @@
 outs:
-<<<<<<< HEAD
 - md5: c23525ea5a4410d9172f34a86d4f4d7a.dir
   size: 415180199
   nfiles: 63565
   hash: md5
   path: images
-=======
-    - md5: bc92760c4c98722d95b05cff20092fba.dir
-      size: 459924
-      path: images
-      nfiles: 100
->>>>>>> ac97b802475466b890570ce174fb6b27ca9c5b45
