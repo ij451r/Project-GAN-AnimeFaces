@@ -1,0 +1,9 @@
+artifacts_root: artifacts
+
+data_ingestion:
+  root_dir: artifacts/data_ingestion
+  kaggle_source: splcher/animefacedataset
+  source_URL: https://www.kaggle.com/datasets/splcher/animefacedataset
+  local_data_file: artifacts/data_ingestion/animefacedataset.zip
+  unzip_dir: artifacts/data_ingestion/
+
