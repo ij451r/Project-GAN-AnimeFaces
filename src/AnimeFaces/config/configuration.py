@@ -24,3 +24,14 @@ class ConfigurationManager:
             unzip_dir = config.unzip_dir
         )
         return data_ingestion_config
+
+    def get_prepare_model_config(self) -> PrepareModelConfig:
+        config = self.config.prepare_model
+        create_directories([config.root_dir])
+        prepare_model_config = PrepareModelConfig(
+            root_dir = config.root_dir,
+            generator_model = config.generator_model,
+            discriminator_model = config.discriminator_model,
+            latent_size = config.latent_size,
+        )
+        return prepare_model_config        

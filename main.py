@@ -18,10 +18,24 @@ def main(config):
             logger.exception(e)
     else:
         logger.info(f">>>>> stage {STAGE_NAME} SKIPPED <<<<<")
+    
+    STAGE_NAME = "Prepare Model Stage"
+    if create_model
+        try:
+            logger.info(f">>>>> stage {STAGE_NAME} STARTED <<<<<")
+            data_ingestion_training_pipeline = DataIngestionTrainingPipeline()
+            data_ingestion_training_pipeline.main()
+            logger.info(f">>>>> stage {STAGE_NAME} COMPLETED <<<<<")
+        except Exception as e:
+            logger.exception(e)    
+    else:
+        logger.info(f">>>>> stage {STAGE_NAME} SKIPPED <<<<<")
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description='Generate High Quality Anime Character Faces with noise')
     parser.add_argument('--data_ingestion', type=bool, default=False,
                             help='Run Data Ingestion. Default: False')
+    parser.add_argument('--create_model', type=bool, default=False,
+                            help='Create and Train model from scratch. Default: False')
     configuration = parser.parse_args()
     main(configuration)

@@ -9,4 +9,9 @@ class DataIngestionConfig:
     local_data_file: Path
     unzip_dir: Path
 
-   
+@dataclass(frozen=True)
+class PrepareModelConfig:
+    root_dir: Path
+    generator_model: Path
+    discriminator_model: Path
+    latent_size: int
