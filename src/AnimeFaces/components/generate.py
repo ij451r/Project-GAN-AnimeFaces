@@ -13,6 +13,7 @@ class Generate:
 	def generate_image(self, show=True):
 		latent_noise = torch.randn(9,self.config.latent_size,1,1,device=self.device)
 		generator_model = Generator(self.config.latent_size)
+		print(self.config.trained_generator_model)
 		generator_model.load_state_dict(torch.load(self.config.trained_generator_model))
 		generator_model = to_device(generator_model,self.device)
 		fake_images = generator_model(latent_noise)

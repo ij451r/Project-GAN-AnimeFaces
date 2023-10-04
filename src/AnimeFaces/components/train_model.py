@@ -67,7 +67,7 @@ class TrainModel:
         loss = real_loss + fake_loss
         loss.backward()
         opt_d.step()
-        return loss.item, real_score, fake_score
+        return loss.item(), real_score, fake_score
 
     def train_generator(self,opt_g):
         opt_g.zero_grad()

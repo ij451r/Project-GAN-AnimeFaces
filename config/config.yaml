@@ -26,6 +26,6 @@ train_model:
   
 generate:
   root_dir: artifacts/generated_images
-  trained_generator_model: artifacts/train_model/Generator.pth
+  trained_generator_model: artifacts/prepare_base_model/Generator.pth
   trained_discriminator_model: artifacts/train_model/Discriminator.pth
   latent_size: 128
