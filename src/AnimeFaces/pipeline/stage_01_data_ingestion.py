@@ -4,7 +4,7 @@ from AnimeFaces import logger
 
 STAGE_NAME = "Data Ingestion Stage"
 
-class DataIngestionTrainingPipeline:
+class DataIngestionPipeline:
     def __init__(self):
         pass
 
@@ -18,8 +18,8 @@ class DataIngestionTrainingPipeline:
 if __name__ == '__main__':
     try:
         logger.info(f">>>>> stage {STAGE_NAME} started <<<<<")
-        data_ingestion_training_pipeline = DataIngestionTrainingPipeline()
-        data_ingestion_training_pipeline.main()
+        data_ingestion_pipeline = DataIngestionPipeline()
+        data_ingestion_pipeline.main()
         logger.info(f">>>>> stage {STAGE_NAME} completed <<<<<")
     except Exception as e:
         logger.exception(e)

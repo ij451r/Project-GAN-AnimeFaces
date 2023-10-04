@@ -2,6 +2,9 @@ from AnimeFaces.constants import *
 from AnimeFaces.utils.common import read_yaml, create_directories
 from AnimeFaces.entity.config_entity import (
 	DataIngestionConfig,
+    PrepareModelConfig,
+    TrainModelConfig,
+    GenerateConfig,
 )
 
 class ConfigurationManager:
@@ -35,3 +38,30 @@ class ConfigurationManager:
             latent_size = config.latent_size,
         )
         return prepare_model_config        
+
+    def get_train_model_config(self) -> TrainModelConfig:
+        config = self.config.train_model
+        create_directories([config.root_dir])
+        train_model_config = TrainModelConfig(
+            root_dir = config.root_dir,
+            generator_model = config.generator_model,
+            discriminator_model = config.discriminator_model,
+            trained_generator_model = config.trained_generator_model,
+            trained_discriminator_model = config.trained_discriminator_model,
+            image_source = config.image_source,
+            latent_size = config.latent_size,
+            image_size = config.image_size,
+            batch_size = config.batch_size,
+        )
+        return train_model_config        
+
+    def get_generate_config(self) -> GenerateConfig:
+        config = self.config.generate
+        create_directories([config.root_dir])
+        generate_config = GenerateConfig(
+            root_dir = config.root_dir,
+            trained_generator_model = config.trained_generator_model,
+            trained_discriminator_model = config.trained_discriminator_model,
+            latent_size = config.latent_size,
+        )
+        return generate_config

@@ -1,0 +1,5 @@
+outs:
+- md5: a426c38d3d1f349638086f1e4a5bb28e
+  size: 799218
+  hash: md5
+  path: TestGeneratorModel-0000.png

@@ -14,5 +14,18 @@ prepare_model:
   latent_size: 128
 
 train_model:
-
-
+  root_dir: artifacts/train_model
+  generator_model: artifacts/prepare_base_model/Generator.pth
+  discriminator_model: artifacts/prepare_base_model/Discriminator.pth
+  trained_generator_model: artifacts/train_model/Generator.pth
+  trained_discriminator_model: artifacts/train_model/Discriminator.pth
+  image_source: artifacts/data_ingestion
+  latent_size: 128
+  image_size: 64
+  batch_size: 8
+  
+generate:
+  root_dir: artifacts/generated_images
+  trained_generator_model: artifacts/train_model/Generator.pth
+  trained_discriminator_model: artifacts/train_model/Discriminator.pth
+  latent_size: 128

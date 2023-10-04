@@ -15,3 +15,22 @@ class PrepareModelConfig:
     generator_model: Path
     discriminator_model: Path
     latent_size: int
+
+@dataclass(frozen=True)
+class TrainModelConfig:
+    root_dir: Path
+    generator_model: Path
+    discriminator_model: Path
+    trained_generator_model: Path
+    trained_discriminator_model: Path
+    image_source: Path
+    latent_size: int
+    image_size: int
+    batch_size: int    
+
+@dataclass(frozen=True)
+class GenerateConfig:
+    root_dir: Path
+    trained_generator_model: Path
+    trained_discriminator_model: Path    
+    latent_size: int
